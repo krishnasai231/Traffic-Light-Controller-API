@@ -106,18 +106,7 @@ Contribution Guidelines
 •Update documentation as needed
 •Add type hints to functions
  Additional Resources
-Books
-•Design Patterns: Elements of Reusable Object-Oriented Software (Gang of Four)
-•Clean Code by Robert C. Martin
-•Functional Programming in Python by David Mertz
-Online Resources
-•Refactoring Guru - Design Patterns
-•Python Design Patterns Guide
-•TDD by Example
-Related Repositories
-•python-design-patterns
-•python-design-pattern-rag
-•Functional-Programming-Exercises
+
  License
 This project is licensed under the MIT License - see the LICENSE file for details.
  Acknowledgments
