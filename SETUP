@@ -1,0 +1,149 @@
+
+Setup
+python -m venv venv
+source venv/bin/activate  # Mac/Linux
+pip install -r requirements.txt
+Run Examples
+python examples/design_patterns/creational/singleton.py
+python examples/design_patterns/behavioral/observer.py
+python examples/architecture/hexagonal/traffic_light_controller.py
+Run Tests
+pytest                                    # All tests
+pytest tests/test_design_patterns.py -v  # Specific file
+pytest --cov=examples                     # With coverage
+📋 Design Patterns Cheat Sheet
+Creational (When/Why to Use)
+Pattern	When to Use	Example
+Singleton	Need exactly one instance	Database connection, Logger
+Factory	Don’t know exact class at compile time	Document reader (PDF, Word, Excel)
+Builder	Complex object construction	Building SQL queries, Config objects
+Behavioral (When/Why to Use)
+Pattern	When to Use	Example
+Observer	One-to-many dependency notifications	Event system, MVC, Pub-Sub
+Strategy	Multiple algorithms, runtime selection	Sorting, Compression, Validation
+State	Object behavior changes with state	TCP connection, Order processing
+Command	Parameterize, queue, or log operations	Undo/Redo, Macro recording, Job queue
+Structural (When/Why to Use)
+Pattern	When to Use	Example
+Decorator	Add features without inheritance	Java I/O streams, UI components
+Adapter	Make incompatible interfaces work	Legacy system integration
+Facade	Simplify complex subsystem	Library wrapper, API simplification
+🎯 Traffic Light Controller - Pattern Application
+Problem: NatWest Coding Kata
+•Manage traffic light state for multiple directions
+•Prevent conflicting green lights
+•Accept commands (change, pause, resume)
+•Provide state and history
+•Thread-safe concurrency
+Solution: Pattern Combinations
+Architecture: Hexagonal (Ports & Adapters)
+├── Core Domain
+│   ├── TrafficLight (Entity)
+│   ├── Intersection (Aggregate)
+│   └── ConflictValidator (Domain Service)
+│
+├── Patterns Used
+│   ├── Singleton: One controller per intersection
+│   ├── Factory: Create different light types
+│   ├── Observer: Notify monitoring systems
+│   ├── Strategy: Different sequencing algorithms
+│   ├── State: Light state machine (Red→Yellow→Green)
+│   ├── Command: Undo/redo operations
+│   └── Decorator: Add logging, validation
+│
+└── Ports & Adapters
+    ├── Ports (Interfaces)
+    │   ├── TrafficLightRepository
+    │   └── EventPublisher
+    └── Adapters (Implementations)
+        ├── InMemoryRepository
+        └── ConsoleEventPublisher
+🧪 TDD Workflow
+RED: Write failing test
+   def test_no_conflicting_green():
+       controller.set_green('NORTH')
+       with pytest.raises(ConflictError):
+           controller.set_green('EAST')
+
+GREEN: Minimal code to pass
+   def set_green(self, direction):
+       if self._has_conflict(direction):
+           raise ConflictError()
+       self._state[direction] = 'GREEN'
+
+
+ Concurrency Patterns
+Problem: Race Conditions
+
+if self.north_light == "RED":
+    self.north_light = "GREEN"
+Solution 1: Locks
+
+with self._lock:
+    if self.north_light == "RED":
+        self.north_light = "GREEN"
+Solution 2: Message Passing
+
+command_queue.put(ChangeToGreenCommand('NORTH'))
+📐 Architecture Decision Matrix
+Scenario	Recommended Architecture	Why
+Simple CRUD app	Layered	Easy to understand, sufficient
+Complex business logic	Hexagonal	Testable, maintainable
+Multiple teams	Microservices	Independent deployment
+Growing monolith	Modular Monolith	Structure without complexity
+🎓 Learning Checklist
+Week 1: Foundations
+•☐ Read Lesson 1 (Architecture)
+•☐ Understand Hexagonal Architecture
+•☐ Run traffic light controller example
+•☐ Complete Exercise 1
+Week 2: Creational Patterns
+•☐ Singleton pattern (thread-safe)
+•☐ Factory Method pattern
+•☐ Builder pattern
+•☐ Run all creational examples
+•☐ Write tests for Singleton
+Week 3: Behavioral Patterns
+•☐ Observer pattern
+•☐ Strategy pattern
+•☐ State pattern
+•☐ Command pattern
+•☐ Complete Observer exercise
+Week 4: Integration
+•☐ Combine multiple patterns
+•☐ Implement complete traffic controller
+•☐ Add concurrency safety
+•☐ Achieve 80%+ test coverage
+•☐ Handle all edge cases
+💡 Common Mistakes & Solutions
+
+class UserService(Singleton): pass
+class OrderService(Singleton): pass
+class ProductService(Singleton): pass
+
+class OrderService:
+    def __init__(self, user_service, product_service):
+        self.user_service = user_service
+        self.product_service = product_service
+
+class SimpleMathFactory:
+    def create_adder(self): return Adder()
+    def create_subtractor(self): return Subtractor()
+
+def add(a, b): return a + b
+def subtract(a, b): return a - b
+Mistake 3: Ignoring Thread Safety
+class Counter:
+    def __init__(self):
+        self.count = 0
+    def increment(self):
+        self.count += 1  # Not atomic!
+
+class Counter:
+    def __init__(self):
+        self.count = 0
+        self._lock = threading.Lock()
+    def increment(self):
+        with self._lock:
+            self.count += 1
+
