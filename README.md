@@ -1,54 +1,6 @@
 Code Architecture, Design Patterns, and Programming Styles
  
-A comprehensive learning repository for mastering software architecture, design patterns, and programming paradigms through hands-on exercises and real-world examples.
-🎯 Overview
 
-│
-├── README.md                          # This file
-├── lessons/                           # Detailed lesson notes
-│   ├── 01_code_architecture.md
-│   ├── 02_design_patterns.md
-│   ├── 03_programming_styles.md
-│   ├── 04_functional_programming.md
-│   └── 05_tdd_and_testing.md
-│
-├── examples/                          # Complete working examples
-│   ├── architecture/
-│   │   ├── layered/                  # Layered architecture demo
-│   │   ├── hexagonal/                # Hexagonal/Ports & Adapters
-│   │   ├── modular_monolith/         # Modular monolith example
-│   │   └── microservices/            # Microservices approach
-│   │
-│   ├── design_patterns/
-│   │   ├── creational/               # Singleton, Factory, Builder, etc.
-│   │   ├── structural/               # Adapter, Decorator, Facade, etc.
-│   │   └── behavioral/               # Observer, Strategy, State, etc.
-│   │
-│   └── programming_styles/
-│       ├── imperative/               # Imperative examples
-│       ├── functional/               # Functional examples
-│       └── tiramisu_flow/            # Creative functional recipe example
-│
-├── exercises/                         # Hands-on exercises
-│   ├── traffic_light_controller/     # Main kata exercise
-│   ├── design_pattern_katas/         # Pattern-specific exercises
-│   └── refactoring_challenges/       # Code refactoring exercises
-│
-├── tests/                            # Comprehensive test suite
-│   ├── test_architecture_examples.py
-│   ├── test_design_patterns.py
-│   ├── test_traffic_light_controller.py
-│   └── test_functional_examples.py
-│
-├── resources/                        # Additional learning materials
-│   ├── cheat_sheets/
-│   ├── diagrams/
-│   └── references.md
-│
-├── requirements.txt                  # Python dependencies
-├── .gitignore
-└── LICENSE
-🚀 Getting Started
 Prerequisites
 •Python 3.8 or higher
 •Git
