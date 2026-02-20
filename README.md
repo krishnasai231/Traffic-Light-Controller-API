@@ -59,17 +59,18 @@ Design Patterns Covered
 Creational: Singleton, Factory Method, Abstract Factory, Builder, Prototype
 Structural: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
 Behavioral: Observer, Strategy, Command, State, Template Method, Iterator, Chain of Responsibility, Mediator, Memento, Visitor, Interpreter
-🏆 Traffic Light Controller Case Study
+
+ Traffic Light Controller Case Study
 The repository centers around a Traffic Light Controller API that demonstrates:
-•✅ State management for multiple directions (North, South, East, West)
-•✅ Validation of conflicting directions (never green simultaneously)
-•✅ Command pattern for changing sequences, pausing, resuming
-•✅ Observer pattern for state change notifications
-•✅ Thread-safe concurrent operations
-•✅ Timing history and state queries
-•✅ Extensible design for future expansion
+• State management for multiple directions (North, South, East, West)
+• Validation of conflicting directions (never green simultaneously)
+• Command pattern for changing sequences, pausing, resuming
+•Observer pattern for state change notifications
+• Thread-safe concurrent operations
+• Timing history and state queries
+• Extensible design for future expansion
 See exercises/traffic_light_controller/ for incremental implementations.
-🧪 Test-Driven Development (TDD)
+ Test-Driven Development (TDD)
 All examples follow TDD principles:
 1.Red - Write a failing test
 2.Green - Write minimal code to pass
@@ -82,7 +83,7 @@ def test_no_conflicting_green_lights():
 
     with pytest.raises(ConflictError):
         controller.set_green('EAST')  # Should raise - conflicts with NORTH
-📊 Assessment Rubric
+ Assessment Rubric
 Use this rubric to evaluate implementations:
 Criteria	Poor (1)	Fair (2)	Good (3)	Excellent (4)
 Problem Analysis	Incomplete	Partial	Mostly correct	Complete, insightful
@@ -91,7 +92,7 @@ Code Readability	Hard to read	Somewhat readable	Readable	Very clear, well-docume
 Edge Cases	None	Some	Most	All, with creative solutions
 Test Coverage	Minimal	Some	Good	Comprehensive, TDD evident
 Concurrency Safety	Unsafe	Some issues	Mostly safe	Fully safe, well-justified
-🤝 Contributing
+ Contributing
 Contributions are welcome! Please:
 1.Fork the repository
 2.Create a feature branch (git checkout -b feature/new-pattern)
@@ -104,7 +105,7 @@ Contribution Guidelines
 •Include comprehensive tests
 •Update documentation as needed
 •Add type hints to functions
-📚 Additional Resources
+ Additional Resources
 Books
 •Design Patterns: Elements of Reusable Object-Oriented Software (Gang of Four)
 •Clean Code by Robert C. Martin
@@ -117,9 +118,9 @@ Related Repositories
 •python-design-patterns
 •python-design-pattern-rag
 •Functional-Programming-Exercises
-📝 License
+ License
 This project is licensed under the MIT License - see the LICENSE file for details.
-🙏 Acknowledgments
+ Acknowledgments
 •Based on the NatWest Traffic Light Controller coding kata
 •Inspired by the Gang of Four design patterns
 •Functional programming examples adapted from real-world recipes
