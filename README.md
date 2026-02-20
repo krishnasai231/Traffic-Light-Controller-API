@@ -2,15 +2,7 @@ Code Architecture, Design Patterns, and Programming Styles
  
 A comprehensive learning repository for mastering software architecture, design patterns, and programming paradigms through hands-on exercises and real-world examples.
 🎯 Overview
-This repository provides a structured lesson plan with practical examples to help developers understand:
-•Code Architecture (Layered, Hexagonal, Microservices, Modular Monolith)
-•Design Patterns (23 Gang of Four patterns with practical examples)
-•Programming Styles (Imperative vs Functional programming)
-•Test-Driven Development (TDD best practices)
-•Concurrency and Thread Safety
-All concepts are demonstrated through a real-world Traffic Light Controller API case study based on the NatWest coding kata.
-📚 Repository Structure
-code-architecture-lessons/
+
 │
 ├── README.md                          # This file
 ├── lessons/                           # Detailed lesson notes
